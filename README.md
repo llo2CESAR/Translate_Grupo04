@@ -20,3 +20,8 @@ Antes de começar, é necessário ter o seguinte instalado na máquina:
    * git clone https://github.com/llo2CESAR/Translate_Grupo04.git
    * cd C:\Users\seu_usuario\sua_pasta>Translate_Grupo0
 
+# Passos:
+   * Inserir informações no caixa de texto;
+   * Traduzir das informações inseridas;
+   * Ouvir a voz da tradução;
+
