@@ -20,3 +20,9 @@ Antes de começar, é necessário ter o seguinte instalado na máquina:
    * git clone https://github.com/llo2CESAR/Translate_Grupo04.git
    * cd C:\Users\seu_usuario\sua_pasta>Translate_Grupo0
 
+2. Equipe
+   * Natalia Cyreno 
+   * Felipe Ferreira
+   * Diego Ferreira
+   * Bruce Junior
+   * Arthur Braga
