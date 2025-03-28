@@ -24,4 +24,5 @@ Antes de começar, é necessário ter o seguinte instalado na máquina:
    * git branch "Nome_da_sua_Branch"
    * git log
    * git checkout
+   * git push
 
