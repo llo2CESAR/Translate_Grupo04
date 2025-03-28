@@ -26,3 +26,12 @@ Antes de começar, é necessário ter o seguinte instalado na máquina:
    * git checkout
    * git push
 
+3. Equipe: 
+    * Natalia;
+    * Felipe;
+    * Diego;
+    * Suelen;
+    * Bruce;
+    * Arthur;
+
+
