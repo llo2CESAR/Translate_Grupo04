@@ -20,3 +20,16 @@ Antes de começar, é necessário ter o seguinte instalado na máquina:
    * git clone https://github.com/llo2CESAR/Translate_Grupo04.git
    * cd C:\Users\seu_usuario\sua_pasta>Translate_Grupo0
 
+2. Crie sua Branch
+   * Git branch "Nome_da_sua_branch"
+   * git log
+   * git checkout
+   * git push
+  
+3. Equipe 
+   * Felipe;
+   * Natália;
+   * Diego;
+   * Bruce;
+   * Arthur;
+   * Suelen;
