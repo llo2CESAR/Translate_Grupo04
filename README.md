@@ -33,3 +33,13 @@ Antes de começar, é necessário ter o seguinte instalado na máquina:
    * Bruce;
    * Arthur;
    * Suelen;
+  
+4. Cronograma
+   * primeira semana
+     * Desenvolvimento do Back - end
+  
+   * Segunda semana
+     * Desenvolvimento Front - end
+   
+   * Terceira semana
+     * Preparar Apresentação 
