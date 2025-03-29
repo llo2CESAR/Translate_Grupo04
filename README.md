@@ -26,3 +26,8 @@ Antes de começar, é necessário ter o seguinte instalado na máquina:
    * Diego Ferreira
    * Bruce Junior
    * Arthur Braga
+
+3. Etapas
+   * Primeira semana: Alinhamento
+   * Segunda semana: desenvolvimento
+   * Terceira semana: Apresentação
