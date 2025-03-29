@@ -34,4 +34,14 @@ Antes de começar, é necessário ter o seguinte instalado na máquina:
     * Bruce;
     * Arthur;
 
+4. Calendario 
+   * Primeira semana :
+      * Desenvolvolvimento;
+
+   * Segunda semana:
+        * Desenvolvimento;
+   * Terceira semana: 
+        * Preparar Apresentação;
+
+
 
