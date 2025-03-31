@@ -45,7 +45,7 @@ while idioma_1 not in [1, 2, 3]:
 
     print('-=' *30)
 
-    idiona_1 = int(input('Digite o número correspondente ao idioma a ser traduzido: '))-1
+    idiona_1 = int(input('Digite o número correspondente ao idioma a ser traduzido: '))-1 #mesma frase do input
 
 idioma_2 = int(input('Digite o número correspondente ao idioma a ser traduzido: '))-1
 
