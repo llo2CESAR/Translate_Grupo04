@@ -1,8 +1,8 @@
 from tkinter import *
 import tkinter as tk
 from tkinter import ttk
-from googletrans import Translator
 from tkinter import messagebox
+
 
 
 root = tk.Tk()
@@ -14,18 +14,18 @@ framel.place(x=0, y=0)
 
 Label(root, text="Language Translator", font=("Helvetica 20 bold"), fg="black", bg='#F7DC6F').pack(pady=10)
 
+from deep_translator import GoogleTranslator
 def translate():
-    lang_1 = text_entry1.get("1.0", "end-1c")
+    lang1 = text_entry1.get('1.0', 'end-1c')
     cl = choose_language.get()
 
-    if lang_1 == '':
+    if lang1 == '':
         messagebox.showerror('Language Translator', 'Enter the text to translate!')
     else:
         text_entry2.delete(1.0, 'end')
-        translator = Translator()
-        output = translator.translate(lang_1, dest=cl)
-        text_entry2.insert('end', output.text)
-
+        translator = GoogleTranslator(source="auto", target=cl)
+        output = translator.translate(lang1)
+        text_entry2.insert('end', output)
 def clear():
     text_entry1.delete(1.0, 'end')
     text_entry2.delete(1.0, 'end')
