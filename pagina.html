@@ -96,20 +96,56 @@
   <div class="translator-container">
     <div class="language-selectors">
       <select id="fromLang">
-        <option value="auto">Detectar idioma</option>
-        <option value="pt">Português</option>
-        <option value="en">Inglês</option>
-        <option value="es">Espanhol</option>
-        <option value="fr">Francês</option>
-        <option value="de">Alemão</option>
-      </select>
+      <option value="auto">Detectar idioma</option>
+          <option value="ar">Árabe</option>
+          <option value="az">Azerbaijano</option>
+          <option value="zh">Chinês</option>
+          <option value="cs">Tcheco</option>
+          <option value="nl">Holandês</option>
+          <option value="en">Inglês</option>
+          <option value="fr">Francês</option>
+          <option value="de">Alemão</option>
+          <option value="hi">Hindi</option>
+          <option value="hu">Húngaro</option>
+          <option value="id">Indonésio</option>
+          <option value="ga">Irlandês</option>
+          <option value="it">Italiano</option>
+          <option value="ja">Japonês</option>
+          <option value="ko">Coreano</option>
+          <option value="fa">Persa</option>
+          <option value="pl">Polonês</option>
+          <option value="pt">Português</option>
+          <option value="ru">Russo</option>
+          <option value="es">Espanhol</option>
+          <option value="tr">Turco</option>
+          <option value="uk">Ucraniano</option>
+          <option value="vi">Vietnamita</option>
+        </select>
 
       <select id="toLang">
-        <option value="en">Inglês</option>
-        <option value="pt">Português</option>
-        <option value="es">Espanhol</option>
-        <option value="fr">Francês</option>
-        <option value="de">Alemão</option>
+      <option value="ar">Árabe</option>
+          <option value="az">Azerbaijano</option>
+          <option value="zh">Chinês</option>
+          <option value="cs">Tcheco</option>
+          <option value="nl">Holandês</option>
+          <option value="en">Inglês</option>
+          <option value="fr">Francês</option>
+          <option value="de">Alemão</option>
+          <option value="hi">Hindi</option>
+          <option value="hu">Húngaro</option>
+          <option value="id">Indonésio</option>
+          <option value="ga">Irlandês</option>
+          <option value="it">Italiano</option>
+          <option value="ja">Japonês</option>
+          <option value="ko">Coreano</option>
+          <option value="fa">Persa</option>
+          <option value="pl">Polonês</option>
+          <option value="pt">Português</option>
+          <option value="ru">Russo</option>
+          <option value="es">Espanhol</option>
+          <option value="tr">Turco</option>
+          <option value="uk">Ucraniano</option>
+          <option value="vi">Vietnamita</option>
       </select>
     </div>
 
@@ -128,35 +164,59 @@
   </div>
 
   <script>
-    function translateText() {
-      const input = document.getElementById("inputText").value;
-      const fromLang = document.getElementById("fromLang").value;
-      const toLang = document.getElementById("toLang").value;
+  async function translateText() {
+    const input = document.getElementById("inputText").value;
+    const fromLang = document.getElementById("fromLang").value;
+    const toLang = document.getElementById("toLang").value;
 
-      if (!input) {
-        alert("Digite algum texto para traduzir.");
-        return;
+    if (!input) {
+      alert("Digite algum texto para traduzir.");
+      return;
+    }
+    try {
+      const response = await fetch("http://127.0.0.1:8000/api/translate/", {
+
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          text: input,
+          target: toLang
+        })
+      });
+
+      const data = await response.json();
+      console.log(data)
+      if (data.translated_text) {
+        document.getElementById("outputText").value = data.translated_text;
+      } else {
+        document.getElementById("outputText").value = "Tradução não encontrada.";
+        console.warn("Resposta inesperada:", data);
       }
-
-      // 🔧 Simulação de tradução (aqui você conectaria com Python ou uma API real)
-      document.getElementById("outputText").value = "[Tradução simulada] " + input;
+    } catch (error) {
+      document.getElementById("outputText").value = "Erro na tradução. Tente novamente.";
+      console.error("Erro ao traduzir:", error);
     }
+  }
 
-    function clearText() {
-      document.getElementById("inputText").value = "";
-      document.getElementById("outputText").value = "";
+  function clearText() {
+    document.getElementById("inputText").value = "";
+    document.getElementById("outputText").value = "";
+  }
+
+  function speakText() {
+    const text = document.getElementById("outputText").value;
+    const synth = window.speechSynthesis;
+
+    if (text) {
+      const utterance = new SpeechSynthesisUtterance(text);
+      synth.speak(utterance);
     }
+  }
+</script>
 
-    function speakText() {
-      const text = document.getElementById("outputText").value;
-      const synth = window.speechSynthesis;
-
-      if (text) {
-        const utterance = new SpeechSynthesisUtterance(text);
-        synth.speak(utterance);
-      }
-    }
-  </script>
+  
 
 </body>
 </html>
