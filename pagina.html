@@ -187,7 +187,6 @@
       });
 
       const data = await response.json();
-      console.log(data)
       if (data.translated_text) {
         document.getElementById("outputText").value = data.translated_text;
       } else {
